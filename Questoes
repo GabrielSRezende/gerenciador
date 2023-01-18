@@ -1,0 +1,8 @@
+1.	Durante a implementação de uma nova funcionalidade de software solicitada, quais critérios você avalia e implementa para garantia de qualidade de software?
+
+Resposta: Bom, inicialmente, gosto de entender a importância do item solicitado em ordem de prioridade, em seguida, é necessário analisar os impactos que podem ser gerados por essa implementação. Após esse periódo de analise de viabilidade, busco estudar a melhor forma de atender a demanda solicitada, para assim iniciar a etapa de desenvolvimento, seguindo para etapa de testes unitários, testes integrados, homologação com o cliente, e por fim, o deploy da nova versão da aplicação.
+
+
+2.	Em qual etapa da implementação você considera a qualidade de software?
+
+Resposta: Acredito que quando falamos de qualidade, estamos tratando algo difícil de medir sem a utilização de parâmetros, por exemplo, para medir a qualidade de um software, é preciso analisar pontos como, segurança, tempo de execução, facilidade de entendimento do código, para assim chegar a uma conclusão de que seu código possui uma certa qualidade desejada, portanto, a etapa de desenvolvimento em si, juntamente com os testes, trazem a tona um software com alto valor.
