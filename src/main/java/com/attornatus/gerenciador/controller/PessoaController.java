@@ -5,6 +5,10 @@ import com.attornatus.gerenciador.dto.PessoaViewDto;
 import com.attornatus.gerenciador.exception.NotFoundException;
 import com.attornatus.gerenciador.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -38,14 +42,17 @@ public class PessoaController {
 
     //Consultar pessoa por id
     @GetMapping("/{id}")
-    public void consultarPessoa(@PathVariable String id){
-
+    public ResponseEntity<PessoaViewDto> consultarPessoa(@PathVariable Long id) throws NotFoundException {
+        PessoaViewDto pessoaViewDto = service.consultaPessoa(id);
+        return ResponseEntity.ok(pessoaViewDto);
     }
 
     //Listar todas as pessoas
     @GetMapping
-    public void listarTodos(){
-
+    public ResponseEntity<Page<PessoaViewDto>> listarTodos(@PageableDefault(size = 50, sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
+        //Pegando todas as pessoas de forma paginada
+        Page<PessoaViewDto> pessoas = service.listarTodos(pageable);
+        return ResponseEntity.ok().body(pessoas);
     }
 
 }

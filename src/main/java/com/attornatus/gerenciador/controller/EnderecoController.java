@@ -1,11 +1,14 @@
 package com.attornatus.gerenciador.controller;
 
 import com.attornatus.gerenciador.model.Endereco;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/endereco")
 public class EnderecoController {
+
+    @Autowired
 
     //Inserir enderecos
     @PostMapping
