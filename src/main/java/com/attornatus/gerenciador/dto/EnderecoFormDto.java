@@ -1,5 +1,6 @@
 package com.attornatus.gerenciador.dto;
 
+import com.attornatus.gerenciador.model.Pessoa;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,8 @@ public class EnderecoFormDto {
     private int numero;
 
     private boolean principal;
+
+    private Pessoa pessoa;
 
     //Getters e setters
     public long getId() {
@@ -50,7 +53,7 @@ public class EnderecoFormDto {
         this.numero = numero;
     }
 
-    public boolean isPrincipal() {
+    public boolean getPrincipal() {
         return principal;
     }
 
@@ -58,4 +61,11 @@ public class EnderecoFormDto {
         this.principal = principal;
     }
 
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
 }

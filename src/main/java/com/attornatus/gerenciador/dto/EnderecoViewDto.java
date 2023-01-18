@@ -1,52 +1,32 @@
-package com.attornatus.gerenciador.model;
+package com.attornatus.gerenciador.dto;
 
-import jakarta.persistence.*;
+import com.attornatus.gerenciador.model.Pessoa;
 
-@Entity
-public class Endereco {
+public class EnderecoViewDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
     private String logradouro;
 
-    @Column(nullable = false)
     private String cep;
 
-    @Column(nullable = false)
     private int numero;
 
-    @Column(nullable = false)
     private boolean principal;
 
-    @ManyToOne
     private Pessoa pessoa;
 
     //Constructor
-    public Endereco(long id, String logradouro, String cep, int numero, boolean principal, Pessoa pessoa) {
+    public EnderecoViewDto(long id, String logradouro, String cep, int numero,boolean Principal, Pessoa pessoa) {
         this.id = id;
         this.logradouro = logradouro;
         this.cep = cep;
         this.numero = numero;
-        this.principal = principal;
+        this.principal = isPrincipal();
         this.pessoa = pessoa;
-    }
-
-    public Endereco(){
-
     }
 
     //Getters e setters
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
-
     public long getId() {
         return id;
     }
@@ -79,7 +59,15 @@ public class Endereco {
         this.numero = numero;
     }
 
-    public boolean getPrincipal() {
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public boolean isPrincipal() {
         return principal;
     }
 

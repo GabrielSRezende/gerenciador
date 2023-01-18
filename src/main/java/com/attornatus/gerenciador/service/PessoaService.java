@@ -39,7 +39,7 @@ public class PessoaService {
     }
 
     public PessoaViewDto alterarPessoa(PessoaFormDto pessoaFormDto) throws NotFoundException {
-        //Buscando pessoa pelo id, caso nao encontre, uma excption personalizada sera enviada
+        //Buscando pessoa pelo id, caso nao encontre, uma exception personalizada sera enviada
         Pessoa pessoa = repository.findById(pessoaFormDto.getId()).orElseThrow(
                 () -> new NotFoundException("Nenhum usuário existente com essas informações!")
             );
@@ -54,7 +54,7 @@ public class PessoaService {
     }
 
     public PessoaViewDto consultaPessoa(Long id) throws NotFoundException {
-        //Buscando pessoa pelo id, caso nao encontre, uma excption personalizada sera enviada
+        //Buscando pessoa pelo id, caso nao encontre, uma exception personalizada sera enviada
         Pessoa pessoa = repository.findById(id).orElseThrow(
                 () -> new NotFoundException("Nenhum usuário existente com essas informações!")
         );
